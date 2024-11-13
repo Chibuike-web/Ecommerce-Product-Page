@@ -923,7 +923,7 @@ p {
 
 .active-thumbnail {
   box-shadow: 0 0 0 2px #ff7d1a;
-  z-index: -1000;
+  /* z-index: -1000; */
 }
 
 .active-thumbnail::after {

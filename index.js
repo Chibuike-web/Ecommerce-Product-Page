@@ -1,24 +1,7 @@
-const images = [
-	{
-		id: 0,
-		src: "./images/image-product-1-thumbnail.jpg",
-	},
-	{
-		id: 1,
-		src: "./images/image-product-2-thumbnail.jpg",
-	},
-	{
-		id: 2,
-		src: "./images/image-product-3-thumbnail.jpg",
-	},
-	{
-		id: 3,
-		src: "./images/image-product-14-thumbnail.jpg",
-	},
-];
-
 const cartDropdown = document.getElementById("cart-dropdown");
 const shoppingCart = document.getElementById("shopping-cart");
+const thumbnails = document.querySelectorAll(".thumbnail");
+const largeProductImage = document.getElementById("large-product-image");
 
 shoppingCart.addEventListener("click", (e) => {
 	e.preventDefault();
@@ -31,4 +14,13 @@ document.addEventListener("click", (e) => {
 	if (!shoppingCart.contains(e.target) && !cartDropdown.contains(e.target)) {
 		cartDropdown.classList.remove("open");
 	}
+});
+
+thumbnails.forEach((thumbnail, index) => {
+	thumbnail.addEventListener("click", (e) => {
+		e.preventDefault();
+		thumbnails.forEach((thumbnail) => thumbnail.classList.remove("active-thumbnail"));
+		thumbnail.classList.add("active-thumbnail");
+		largeProductImage.src = `./images/image-product-${index + 1}.jpg`;
+	});
 });
