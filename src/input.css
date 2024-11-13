@@ -85,6 +85,10 @@ p {
 	overflow: hidden;
 }
 
+.opacity {
+	opacity: 0.5;
+}
+
 .active-thumbnail {
 	box-shadow: 0 0 0 2px #ff7d1a;
 	/* z-index: -1000; */
