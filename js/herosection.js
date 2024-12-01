@@ -16,6 +16,7 @@ document.addEventListener("click", (e) => {
 	}
 });
 
+// Herosection thumbnails
 thumbnails.forEach((thumbnail, index) => {
 	// Click event
 	thumbnail.addEventListener("click", (e) => {

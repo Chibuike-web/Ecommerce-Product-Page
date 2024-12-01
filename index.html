@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Ecommerce Product Page</title>
 		<link rel="stylesheet" href="./dist/output.css" />
-		<script src="index.js" defer></script>
+		<script src="./js/main.js" defer type="module"></script>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -14,7 +14,7 @@
 			rel="stylesheet"
 		/>
 	</head>
-	<body>
+	<body class="relative">
 		<!-- Nav -->
 		<header class="mx-auto max-w-[69.5rem] w-full pt-[2rem]">
 			<nav
@@ -129,6 +129,117 @@
 					</button>
 				</div>
 			</article>
+		</section>
+
+		<!-- Lightbox -->
+		<section id="lightbox-container" class="fixed inset-0 z-50 hidden">
+			<!-- Backdrop -->
+			<div class="w-full h-full flex items-center justify-center">
+				<div
+					id="lightbox-backdrop"
+					class="w-full h-full bg-black bg-opacity-80 flex items-center justify-center"
+				></div>
+				<div class="absolute lightbox flex flex-col items-end gap-[22px]">
+					<!-- Close button -->
+					<button class="close-btn">
+						<svg
+							width="21"
+							height="22"
+							viewBox="0 0 21 22"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<g clip-path="url(#clip0_982_715)">
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M17.3308 1.14697L20.3623 4.25924L13.7937 10.9986L20.3608 17.7408L17.3294 20.8531L10.7651 14.1094L4.20083 20.8516L1.1694 17.7394L7.73368 11L1.16797 4.25924L4.1994 1.14697L10.7637 7.88777L17.3308 1.14697Z"
+									fill="#F7FAFD"
+								/>
+							</g>
+							<defs>
+								<clipPath id="clip0_982_715">
+									<rect width="20" height="22" fill="white" transform="translate(0.765625)" />
+								</clipPath>
+							</defs>
+						</svg>
+					</button>
+					<!-- Lightbox Image Gallery -->
+					<div class="flex flex-col items-center">
+						<div class="lightbox-product--image__container w-full max-w-[550px] relative">
+							<!-- Big Product Image -->
+							<figure class="lightbox-product--image">
+								<img
+									id="lightbox-large-product-image"
+									src="./images/image-product-1.jpg"
+									alt="Product image"
+									class="rounded-[0.75rem] w-full"
+								/>
+							</figure>
+							<!-- Left Arrow Button -->
+							<button
+								id="left-arrow"
+								class="bg-white w-[56px] h-[56px] flex justify-center items-center rounded-full absolute top-[50%] translate-x-[-50%]"
+							>
+								<svg
+									width="13"
+									height="18"
+									viewBox="0 0 13 18"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path d="M11.7656 1L3.76562 9L11.7656 17" stroke="#1D2026" stroke-width="3" />
+								</svg>
+							</button>
+							<!-- Right Arrow Button -->
+							<button
+								id="right-arrow"
+								class="bg-white w-[56px] h-[56px] flex justify-center items-center rounded-full absolute right-0 top-[50%] translate-x-[50%]"
+							>
+								<svg
+									width="14"
+									height="18"
+									viewBox="0 0 14 18"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path d="M2.76562 1L10.7656 9L2.76562 17" stroke="#1D2026" stroke-width="3" />
+								</svg>
+							</button>
+						</div>
+						<div class="flex justify-between mt-[2rem] w-full max-w-[445px]">
+							<figure class="lightbox-thumbnail active-thumbnail">
+								<img
+									src="./images/image-product-1-thumbnail.jpg"
+									alt="Thumbnail 1"
+									class="w-full"
+								/>
+							</figure>
+							<figure class="lightbox-thumbnail">
+								<img
+									src="./images/image-product-2-thumbnail.jpg"
+									alt="Thumbnail 2"
+									class="w-full"
+								/>
+							</figure>
+							<figure class="lightbox-thumbnail">
+								<img
+									src="./images/image-product-3-thumbnail.jpg"
+									alt="Thumbnail 3"
+									class="w-full"
+								/>
+							</figure>
+							<figure class="lightbox-thumbnail">
+								<img
+									src="./images/image-product-4-thumbnail.jpg"
+									alt="Thumbnail 4"
+									class="w-full"
+								/>
+							</figure>
+						</div>
+					</div>
+				</div>
+			</div>
 		</section>
 	</body>
 </html>
