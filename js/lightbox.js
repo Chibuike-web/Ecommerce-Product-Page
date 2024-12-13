@@ -17,7 +17,6 @@ largeProductImage.addEventListener("click", (event) => {
 
 //Lighbox thumbnails
 lightboxThumbnails.forEach((thumbnail, index) => {
-	// Click event
 	thumbnail.addEventListener("click", (e) => {
 		e.preventDefault();
 		lightboxThumbnails.forEach((thumbnail) => thumbnail.classList.remove("active-thumbnail"));
@@ -25,16 +24,14 @@ lightboxThumbnails.forEach((thumbnail, index) => {
 		lightboxLargeProductImage.src = `./images/image-product-${index + 1}.jpg`;
 	});
 
-	// Mouseenter event
 	thumbnail.addEventListener("mouseenter", (e) => {
 		if (thumbnail.classList.contains("active-thumbnail")) {
-			return; // Do nothing if it's already active
+			return;
 		} else {
 			thumbnail.classList.add("white-opacity");
 		}
 	});
 
-	// Mouseleave event to clean up opacity
 	thumbnail.addEventListener("mouseleave", (e) => {
 		thumbnail.classList.remove("white-opacity");
 	});
