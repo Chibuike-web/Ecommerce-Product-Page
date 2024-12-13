@@ -15,7 +15,6 @@ largeProductImage.addEventListener("click", (event) => {
 	});
 });
 
-//Lighbox thumbnails
 lightboxThumbnails.forEach((thumbnail, index) => {
 	thumbnail.addEventListener("click", (e) => {
 		e.preventDefault();

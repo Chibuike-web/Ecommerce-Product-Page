@@ -9,14 +9,12 @@ shoppingCart.addEventListener("click", (e) => {
 	cartDropdown.classList.toggle("open");
 });
 
-// Close the dropdown when clicking outside of it
 document.addEventListener("click", (e) => {
 	if (!shoppingCart.contains(e.target) && !cartDropdown.contains(e.target)) {
 		cartDropdown.classList.remove("open");
 	}
 });
 
-// Herosection thumbnails
 thumbnails.forEach((thumbnail, index) => {
 	thumbnail.addEventListener("click", (e) => {
 		e.preventDefault();
