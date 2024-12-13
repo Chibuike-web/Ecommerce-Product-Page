@@ -1,6 +1,8 @@
 const largeProductImage = document.getElementById("large-product-image");
 const lightboxLargeProductImage = document.getElementById("lightbox-large-product-image");
 const lightboxThumbnails = document.querySelectorAll(".lightbox-thumbnail");
+const rightArrow = document.getElementById("right-arrow");
+const leftArrow = document.getElementById("left-arrow");
 
 largeProductImage.addEventListener("click", (event) => {
 	event.preventDefault();
@@ -28,12 +30,12 @@ lightboxThumbnails.forEach((thumbnail, index) => {
 		if (thumbnail.classList.contains("active-thumbnail")) {
 			return; // Do nothing if it's already active
 		} else {
-			thumbnail.classList.add("opacity");
+			thumbnail.classList.add("white-opacity");
 		}
 	});
 
 	// Mouseleave event to clean up opacity
 	thumbnail.addEventListener("mouseleave", (e) => {
-		thumbnail.classList.remove("opacity");
+		thumbnail.classList.remove("white-opacity");
 	});
 });
