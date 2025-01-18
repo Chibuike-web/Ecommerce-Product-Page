@@ -16,15 +16,17 @@
 	</head>
 	<body class="relative">
 		<!-- Nav -->
-		<header class="mx-auto max-w-[69.5rem] w-full pt-[2rem]">
+		<header class="relative mx-auto max-w-[69.5rem] w-full pt-[2rem]">
 			<nav
-				class="flex justify-between items-center mx-[1.5rem] pb-[2rem] border-b border-grayishBlue"
+				class="flex justify-between items-center mx-[1.5rem] pb-[2rem] border-b border-grayishBlue lg:border-0"
 			>
 				<div class="flex items-center gap-[3.625rem]">
-					<figure>
+					<figure class="flex gap-4">
+						<img src="./images/icon-menu.svg" alt="Harmburger menu" class="hidden w-full lg:flex" />
 						<img src="./images/logo.svg" alt="logo" />
 					</figure>
-					<ul class="flex gap-[2.25rem] text-darkGrayishBlue">
+					<!-- Navlinks -->
+					<ul class="flex gap-[2.25rem] text-darkGrayishBlue lg:hidden">
 						<li class="relative"><a href="#collections" class="nav-link">Collections</a></li>
 						<li class="relative"><a href="#men" class="nav-link">Men</a></li>
 						<li class="relative"><a href="#women" class="nav-link">Women</a></li>
@@ -32,17 +34,16 @@
 						<li class="relative"><a href="#contact" class="nav-link">Contact</a></li>
 					</ul>
 				</div>
-				<div class="flex items-center gap-[2.5rem]">
-					<div id="shoppingCartWrapper" class="relative flex items-center">
+
+				<!--Cart and profile image   -->
+				<div class="flex items-center gap-[2.5rem] lg:gap-4">
+					<div id="shoppingCartWrapper" class="flex items-center">
 						<button aria-label="Shopping Cart" id="shopping-cart">
 							<img src="./images/icon-cart.svg" alt="Shopping cart icon" />
 						</button>
 
 						<!-- Cart Dropdown-->
-						<div
-							id="cart-dropdown"
-							class="absolute w-[360px] h-[260px] rounded-[12px] bg-white z-50"
-						>
+						<div id="cart-dropdown" class="w-[360px] h-[260px] rounded-[12px] bg-white z-50">
 							<div class="w-full p-6 border-b-[1px] border-grayishBlue">
 								<p class="font-bold w-max">Cart</p>
 							</div>
@@ -52,7 +53,7 @@
 						</div>
 					</div>
 					<figure class="avatar-container relative max-w-[2.5rem]">
-						<img src="./images/image-avatar.png" alt="User avatar" />
+						<img src="./images/image-avatar.png" alt="User avatar" class="w-full" />
 					</figure>
 				</div>
 			</nav>
@@ -60,9 +61,9 @@
 
 		<!-- Hero Section -->
 		<section
-			class="mx-auto max-w-[63.5rem] mt-[5.6875rem] flex items-start justify-between gap-[2rem]"
+			class="mx-auto max-w-[63.5rem] mt-[5.6875rem] lg:mt-0 flex items-start justify-between gap-[2rem] lg:flex-col lg:items-center"
 		>
-			<aside class="max-w-[27.8125rem]">
+			<aside class="max-w-[27.8125rem] lg:hidden">
 				<img
 					id="large-product-image"
 					src="./images/image-product-1.jpg"
@@ -84,7 +85,52 @@
 					</figure>
 				</div>
 			</aside>
-			<article class="flex flex-col w-full max-w-[27.8125rem] mt-[4rem]">
+
+			<div class="mobile-product--image__container w-full relative hidden lg:flex">
+				<!-- Big Product Image -->
+				<figure class="mobile-product--image w-full">
+					<img
+						id="mobile-large-product-image"
+						src="./images/image-product-1.jpg"
+						alt="Product image"
+						class="w-full"
+					/>
+				</figure>
+				<!-- Left Arrow Button -->
+				<button
+					id="mobile-left-arrow"
+					class="bg-white w-[56px] h-[56px] flex justify-center items-center rounded-full absolute top-[50%]"
+				>
+					<svg
+						width="13"
+						height="18"
+						viewBox="0 0 13 18"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path d="M11.7656 1L3.76562 9L11.7656 17" stroke="#1D2026" stroke-width="3" />
+					</svg>
+				</button>
+				<!-- Right Arrow Button -->
+				<button
+					id="mobile-right-arrow"
+					class="bg-white w-[56px] h-[56px] flex justify-center items-center rounded-full absolute right-0 top-[50%]"
+				>
+					<svg
+						width="14"
+						height="18"
+						viewBox="0 0 14 18"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path d="M2.76562 1L10.7656 9L2.76562 17" stroke="#1D2026" stroke-width="3" />
+					</svg>
+				</button>
+			</div>
+
+			<article
+				class="flex flex-col w-full max-w-[27.8125rem] mt-[4rem] lg:mt-0 lg:px-6 lg:max-w-full"
+			>
 				<p class="text-orange font-bold tracking-[0.1em] text-[0.875rem]">SNEAKER COMPANY</p>
 				<h1 class="text-[2.75rem] leading-[1.2] font-bold mt-[0.875rem] mb-[1.625rem]">
 					Fall Limited Edition Sneakers
@@ -101,9 +147,11 @@
 					>
 				</div>
 				<p class="text-grayishBlue line-through">$250.00</p>
-				<div class="flex gap-[0.875rem] mt-[2rem]">
+
+				<div class="flex gap-[0.875rem] mt-[2rem] lg:flex-col">
+					<!-- Increment button -->
 					<div
-						class="flex items-center gap-[2.8125rem] bg-lightGrayishBlue px-[0.9375rem] py-[1.25rem] rounded-[0.625rem]"
+						class="flex items-center gap-[2.8125rem] bg-lightGrayishBlue px-[0.9375rem] py-[1.25rem] rounded-[0.625rem] lg:justify-between"
 					>
 						<button aria-label="Decrease quantity" class="w-full max-w-[0.75rem]">
 							<img src="./images/icon-minus.svg" alt="Minus icon" />
@@ -113,8 +161,10 @@
 							<img src="./images/icon-plus.svg" alt="Plus icon" />
 						</button>
 					</div>
+
+					<!-- Add cart button -->
 					<button
-						class="bg-orange rounded-[0.625rem] text-white w-full max-w-[17.375rem] flex items-center justify-center gap-[0.75rem]"
+						class="bg-orange rounded-[0.625rem] px-[0.9375rem] py-[1.25rem] text-white w-full max-w-[17.375rem] flex items-center justify-center gap-[0.75rem] lg:max-w-full"
 					>
 						<span class="flex items-center">
 							<svg width="1.375rem" height="1.25rem" xmlns="http://www.w3.org/2000/svg">
