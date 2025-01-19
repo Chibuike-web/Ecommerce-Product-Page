@@ -16,17 +16,21 @@
 	</head>
 	<body class="relative">
 		<!-- Nav -->
-		<header class="relative mx-auto max-w-[69.5rem] w-full pt-[2rem]">
+		<header class="relative mx-auto max-w-[69.5rem] w-full pt-[2rem] lg:pt-[1.5rem]">
 			<nav
-				class="flex justify-between items-center mx-[1.5rem] pb-[2rem] border-b border-grayishBlue lg:border-0"
+				class="flex justify-between items-center mx-[1.5rem] pb-[2rem] lg:pb-[1.5rem] border-b border-grayishBlue lg:border-0"
 			>
 				<div class="flex items-center gap-[3.625rem]">
-					<figure class="flex gap-4">
-						<img src="./images/icon-menu.svg" alt="Harmburger menu" class="hidden w-full lg:flex" />
-						<img src="./images/logo.svg" alt="logo" />
+					<figure class="flex gap-4 w-full">
+						<img
+							src="./images/icon-menu.svg"
+							alt="Harmburger menu"
+							class="hidden w-full cursor-pointer lg:flex harmburger-menu"
+						/>
+						<img src="./images/logo.svg" alt="logo" class="w-full max-w-[100px]" />
 					</figure>
 					<!-- Navlinks -->
-					<ul class="flex gap-[2.25rem] text-darkGrayishBlue lg:hidden">
+					<ul class="text-darkGrayishBlue lg:hidden">
 						<li class="relative"><a href="#collections" class="nav-link">Collections</a></li>
 						<li class="relative"><a href="#men" class="nav-link">Men</a></li>
 						<li class="relative"><a href="#women" class="nav-link">Women</a></li>
@@ -34,6 +38,28 @@
 						<li class="relative"><a href="#contact" class="nav-link">Contact</a></li>
 					</ul>
 				</div>
+
+				<!-- Mobile Navigation Sidebar -->
+
+				<div
+					class="mobile-nav-sidebar bg-white fixed z-[1100] top-0 left-[-100%] bottom-0 flex-col w-[80%] py-[1.5rem] px-[2rem] transition-all duration-300"
+				>
+					<div class="flex flex-col">
+						<figure class="max-w-[1rem] w-full mobile-close-btn">
+							<img src="./images/icon-close.svg" alt="close-btn" class="w-full cursor-pointer" />
+						</figure>
+						<ul class="gap-[2.25rem] flex flex-col mt-[4rem] text-[18px] font-semibold">
+							<li class="relative"><a href="#collections">Collections</a></li>
+							<li class="relative"><a href="#men">Men</a></li>
+							<li class="relative"><a href="#women">Women</a></li>
+							<li class="relative"><a href="#about">About</a></li>
+							<li class="relative"><a href="#contact">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+				<div
+					class="hidden overlay bg-black opacity-80 fixed top-0 bottom-0 left-0 right-0 z-[1000]"
+				></div>
 
 				<!--Cart and profile image   -->
 				<div class="flex items-center gap-[2.5rem] lg:gap-4">
@@ -52,7 +78,7 @@
 							</div>
 						</div>
 					</div>
-					<figure class="avatar-container relative max-w-[2.5rem]">
+					<figure class="avatar-container relative max-w-[2rem]">
 						<img src="./images/image-avatar.png" alt="User avatar" class="w-full" />
 					</figure>
 				</div>
@@ -99,7 +125,7 @@
 				<!-- Left Arrow Button -->
 				<button
 					id="mobile-left-arrow"
-					class="bg-white w-[56px] h-[56px] flex justify-center items-center rounded-full absolute top-[50%]"
+					class="bg-white w-[56px] h-[56px] md:w-[40px] md:h-[40px] flex justify-center items-center rounded-full absolute top-[50%] left-[20px]"
 				>
 					<svg
 						width="13"
@@ -114,7 +140,7 @@
 				<!-- Right Arrow Button -->
 				<button
 					id="mobile-right-arrow"
-					class="bg-white w-[56px] h-[56px] flex justify-center items-center rounded-full absolute right-0 top-[50%]"
+					class="bg-white w-[56px] h-[56px] md:w-[40px] md:h-[40px] flex justify-center items-center rounded-full absolute top-[50%] right-[20px]"
 				>
 					<svg
 						width="14"
@@ -139,14 +165,16 @@
 					These low-profile sneakers are your perfect casual wear companion. Featuring a durable
 					rubber outer sole, they’ll withstand everything the weather can offer.
 				</p>
-				<div class="flex items-center gap-[0.75rem] mb-[0.25rem]">
-					<span class="font-bold text-[1.75rem]">$125.00</span>
-					<span
-						class="bg-paleOrange text-orange font-semibold px-[0.5rem] py-[0.25rem] rounded-[0.375rem]"
-						>50%</span
-					>
+				<div class="lg:flex lg:justify-between lg:items-center">
+					<div class="flex items-center gap-[0.75rem] mb-[0.25rem]">
+						<span class="font-bold text-[1.75rem]">$125.00</span>
+						<span
+							class="bg-paleOrange text-orange font-semibold px-[0.5rem] py-[0.25rem] rounded-[0.375rem]"
+							>50%</span
+						>
+					</div>
+					<p class="text-grayishBlue line-through">$250.00</p>
 				</div>
-				<p class="text-grayishBlue line-through">$250.00</p>
 
 				<div class="flex gap-[0.875rem] mt-[2rem] lg:flex-col">
 					<!-- Increment button -->

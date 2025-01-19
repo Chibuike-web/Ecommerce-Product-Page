@@ -24,7 +24,7 @@ lightboxThumbnails.forEach((thumbnail, index) => {
 		lightboxLargeProductImage.src = `./images/image-product-${index + 1}.jpg`;
 	});
 
-	thumbnail.addEventListener("mouseenter", (e) => {
+	thumbnail.addEventListener("mouseenter", () => {
 		if (thumbnail.classList.contains("active-thumbnail")) {
 			return;
 		} else {
@@ -32,7 +32,7 @@ lightboxThumbnails.forEach((thumbnail, index) => {
 		}
 	});
 
-	thumbnail.addEventListener("mouseleave", (e) => {
+	thumbnail.addEventListener("mouseleave", () => {
 		thumbnail.classList.remove("white-opacity");
 	});
 });
@@ -44,15 +44,13 @@ closeBtn.addEventListener("click", (e) => {
 });
 
 let rightClick = 0;
-const totalImages = 4; // Total number of images available
+const totalImages = 4;
 
-// Event listener for right arrow
 rightArrow.addEventListener("click", (e) => {
 	e.preventDefault();
-	rightClick = (rightClick + 1) % totalImages; // Cycle through images
+	rightClick = (rightClick + 1) % totalImages;
 	lightboxLargeProductImage.src = `./images/image-product-${rightClick + 1}.jpg`;
 
-	// Update active thumbnail class
 	lightboxThumbnails.forEach((thumbnail, index) => {
 		thumbnail.classList.toggle("active-thumbnail", index === rightClick);
 	});
@@ -60,13 +58,11 @@ rightArrow.addEventListener("click", (e) => {
 
 let leftClick = totalImages - 1;
 
-// Event listener for left arrow
 leftArrow.addEventListener("click", (e) => {
 	e.preventDefault();
-	leftClick = (leftClick - 1 + totalImages) % totalImages; // Cycle through images backward
+	leftClick = (leftClick - 1 + totalImages) % totalImages;
 	lightboxLargeProductImage.src = `./images/image-product-${leftClick + 1}.jpg`;
 
-	// Update active thumbnail class
 	lightboxThumbnails.forEach((thumbnail, index) => {
 		thumbnail.classList.toggle("active-thumbnail", index === leftClick);
 	});

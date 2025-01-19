@@ -39,19 +39,16 @@ p {
 	/* transition: border 0.3s; */
 }
 
-/* Only apply hover effects for devices that support hover */
 @media (hover: hover) and (pointer: fine) {
 	#shoppingCartWrapper:hover #cart-dropdown {
 		display: flex;
 		flex-direction: column;
 	}
 
-	/* Avatar hover effect for non-touch devices */
 	.avatar-container:hover::before {
 		border: 2px solid orange;
 	}
 
-	/* Nav link hover effect for non-touch devices */
 	.nav-link:hover {
 		color: #262e38;
 		font-weight: 600;
@@ -71,7 +68,7 @@ p {
 
 	@media (max-width: 976px) {
 		width: calc(100% - 1.5rem);
-		top: 120px;
+		top: 80px;
 		left: 50%;
 		transform: translateX(-50%);
 	}
@@ -141,4 +138,23 @@ p {
 		cursor: none;
 		stroke: none;
 	}
+}
+
+@media (max-width: 976px) {
+	a,
+	.avatar-container:hover::before,
+	#right-arrow:hover svg path {
+		background-color: inherit;
+		cursor: default;
+		stroke: inherit;
+		color: inherit;
+		box-shadow: none;
+		text-decoration: none;
+		border: none;
+	}
+}
+
+.visible {
+	display: flex;
+	left: 0;
 }
