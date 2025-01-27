@@ -4,6 +4,8 @@ const quantity = document.getElementById("quantity");
 const addToCartBtn = document.getElementById("addToCart-btn");
 const cartDropdown = document.getElementById("cart-dropdown");
 const cartItem = cartDropdown.querySelector("#cart-item");
+const h1 = document.querySelector("h1");
+const shoppingCart = document.getElementById("shopping-cart");
 
 increaseBtn.addEventListener("click", (e) => {
 	e.preventDefault();
@@ -18,12 +20,67 @@ decreaseBtn.addEventListener("click", (e) => {
 	}
 });
 
-let btnPresent = false;
+let click = false;
 addToCartBtn.addEventListener("click", (e) => {
 	e.preventDefault();
 
 	if (quantity.textContent > 0) {
-		if (!btnPresent) {
+		const firstParagraph = cartItem.querySelector("p");
+		firstParagraph.className = "hidden";
+
+		// Cart content - Top Level div
+		const parentDiv = document.createElement("div");
+		parentDiv.className = "flex items-center justify-between w-full";
+
+		// Image thumbnail
+		const img = document.createElement("img");
+		img.src = "../images/image-product-1-thumbnail.jpg";
+		img.alt = "Cart image thumbnail";
+		img.className = "w-full max-w-[50px] rounded-[5px]";
+		parentDiv.appendChild(img);
+
+		// Items
+		const childDiv = document.createElement("div");
+		// childDiv.className = "ml-4 flex-grow";
+
+		// Item name
+		const firstParagraphElement = document.createElement("p");
+		firstParagraphElement.id = "item-name";
+		firstParagraphElement.textContent = h1.textContent;
+
+		// Item price quantity
+		const secondParagraphElement = document.createElement("p");
+		secondParagraphElement.textContent = `$125.00 x ${quantity.textContent}`;
+
+		const cartSpan = document.createElement("span");
+		cartSpan.textContent = `$${125 * parseInt(quantity.textContent)}.00`;
+		cartSpan.className = "ml-4 font-semibold text-black";
+		secondParagraphElement.appendChild(cartSpan);
+
+		childDiv.appendChild(firstParagraphElement);
+		childDiv.appendChild(secondParagraphElement);
+		parentDiv.appendChild(childDiv);
+
+		// Delete icon
+		const deleteImg = document.createElement("img");
+		deleteImg.src = "../images/icon-delete.svg";
+		deleteImg.alt = "Delete Icon";
+		deleteImg.id = "delete-btn";
+		deleteImg.className = "cursor-pointer";
+		parentDiv.appendChild(deleteImg);
+
+		// Append parentDiv
+		cartItem.appendChild(parentDiv);
+
+		// Add quantity indicator on shopping cart
+		const span = document.createElement("span");
+		span.className =
+			"bg-orange absolute text-[8px] leading-[1.2] right-[-5px] top-[-5px] font-medium text-white px-[8px] py-[2px] rounded-full";
+		span.textContent = quantity.textContent;
+		const shoppingCart = document.getElementById("shopping-cart");
+		shoppingCart.appendChild(span);
+
+		if (!click) {
 			const button = document.createElement("button");
 			button.textContent = "Checkout";
 			button.className =
@@ -31,13 +88,7 @@ addToCartBtn.addEventListener("click", (e) => {
 			cartItem.className =
 				"flex flex-col flex-grow items-center justify-between px-[1.5rem] pb-[2rem] pt-[1.5rem]";
 			cartItem.appendChild(button);
-			btnPresent = true;
-			const span = document.createElement("span");
-			span.className =
-				"bg-orange absolute text-[8px] leading-[1.2] right-[-5px] top-[-5px] font-medium text-white px-[8px] py-[2px] rounded-full";
-			span.textContent = quantity.textContent;
-			const shoppingCart = document.getElementById("shopping-cart");
-			shoppingCart.appendChild(span);
+			click = true;
 		}
 	}
 });

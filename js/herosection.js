@@ -3,10 +3,23 @@ const shoppingCart = document.getElementById("shopping-cart");
 const thumbnails = document.querySelectorAll(".thumbnail");
 const largeProductImage = document.getElementById("large-product-image");
 
+let timer;
+
 shoppingCart.addEventListener("click", (e) => {
 	e.preventDefault();
 	console.log("click");
 	cartDropdown.classList.toggle("open");
+
+	if (timer) {
+		clearTimeout(timer);
+	}
+
+	timer = setTimeout(() => {
+		const existingSpan = shoppingCart.querySelector("span");
+		if (existingSpan) {
+			existingSpan.remove();
+		}
+	}, 500);
 });
 
 document.addEventListener("click", (e) => {
