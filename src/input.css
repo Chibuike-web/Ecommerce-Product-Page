@@ -68,7 +68,7 @@ p {
 
 	@media (max-width: 976px) {
 		width: calc(100% - 1.5rem);
-		top: 80px;
+		top: 100px;
 		left: 50%;
 		transform: translateX(-50%);
 	}
