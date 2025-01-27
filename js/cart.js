@@ -24,7 +24,7 @@ let click = false;
 addToCartBtn.addEventListener("click", (e) => {
 	e.preventDefault();
 
-	if (quantity.textContent > 0) {
+	if (quantity.textContent > 0 && !click) {
 		const firstParagraph = cartItem.querySelector("p");
 		firstParagraph.className = "hidden";
 
@@ -88,7 +88,7 @@ addToCartBtn.addEventListener("click", (e) => {
 			cartItem.className =
 				"flex flex-col flex-grow items-center justify-between px-[1.5rem] pb-[2rem] pt-[1.5rem]";
 			cartItem.appendChild(button);
-			click = true;
 		}
 	}
+	click = true;
 });
