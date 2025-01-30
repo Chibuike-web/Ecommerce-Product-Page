@@ -632,6 +632,11 @@ video {
   margin-right: auto;
 }
 
+.my-\[5\.6875rem\] {
+  margin-top: 5.6875rem;
+  margin-bottom: 5.6875rem;
+}
+
 .mb-\[0\.25rem\] {
   margin-bottom: 0.25rem;
 }
