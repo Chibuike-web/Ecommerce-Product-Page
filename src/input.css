@@ -129,17 +129,6 @@ p {
 	background-color: rgba(255, 255, 255, 0.5);
 }
 
-@media (pointer: coarse) {
-	button:hover {
-		background-color: inherit; /* Reset hover styles */
-	}
-
-	#right-arrow:hover svg path {
-		cursor: none;
-		stroke: none;
-	}
-}
-
 @media (max-width: 976px) {
 	a,
 	.avatar-container:hover::before,
@@ -157,4 +146,31 @@ p {
 .visible {
 	display: flex;
 	left: 0;
+}
+
+.cart-badge {
+	background-color: hsl(26, 100%, 55%);
+	position: absolute;
+	font-size: 8px;
+	line-height: 1.2;
+	right: -5px;
+	top: -5px;
+	font-weight: 500;
+	color: white;
+	padding-inline: 8px;
+	padding-block: 2px;
+	border-radius: 100px;
+}
+
+.cart-img {
+	width: 100%;
+	max-width: 50px;
+	border-radius: 5px;
+	margin-right: 10px;
+}
+
+.total-price {
+	margin-left: 4px;
+	font-weight: 600;
+	color: black;
 }

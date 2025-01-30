@@ -36,12 +36,12 @@ addToCartBtn.addEventListener("click", (e) => {
 		const img = document.createElement("img");
 		img.src = "../images/image-product-1-thumbnail.jpg";
 		img.alt = "Cart image thumbnail";
-		img.className = "w-full max-w-[50px] rounded-[5px]";
+		img.classList.add("cart-img");
 		parentDiv.appendChild(img);
 
 		// Items
 		const childDiv = document.createElement("div");
-		// childDiv.className = "ml-4 flex-grow";
+		childDiv.className = "ml-4 flex-grow";
 
 		// Item name
 		const firstParagraphElement = document.createElement("p");
@@ -54,7 +54,7 @@ addToCartBtn.addEventListener("click", (e) => {
 
 		const cartSpan = document.createElement("span");
 		cartSpan.textContent = `$${125 * parseInt(quantity.textContent)}.00`;
-		cartSpan.className = "ml-4 font-semibold text-black";
+		cartSpan.classList.add("total-price");
 		secondParagraphElement.appendChild(cartSpan);
 
 		childDiv.appendChild(firstParagraphElement);
@@ -74,8 +74,7 @@ addToCartBtn.addEventListener("click", (e) => {
 
 		// Add quantity indicator on shopping cart
 		const span = document.createElement("span");
-		span.className =
-			"bg-orange absolute text-[8px] leading-[1.2] right-[-5px] top-[-5px] font-medium text-white px-[8px] py-[2px] rounded-full";
+		span.classList.add("cart-badge");
 		span.textContent = quantity.textContent;
 		const shoppingCart = document.getElementById("shopping-cart");
 		shoppingCart.appendChild(span);
