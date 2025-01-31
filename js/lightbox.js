@@ -3,7 +3,7 @@ const lightboxLargeProductImage = document.getElementById("lightbox-large-produc
 const lightboxThumbnails = document.querySelectorAll(".lightbox-thumbnail");
 const rightArrow = document.getElementById("right-arrow");
 const leftArrow = document.getElementById("left-arrow");
-const closeBtn = document.querySelector(".close-btn");
+const closeBtn = document.querySelector(".lightbox-close-btn");
 
 largeProductImage.addEventListener("click", (event) => {
 	event.preventDefault();

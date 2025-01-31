@@ -1122,6 +1122,11 @@ p {
   stroke: #ff7d1a;
 }
 
+.lightbox-close-btn:hover svg path {
+  cursor: pointer;
+  fill: #ff7d1a;
+}
+
 .white-opacity::after {
   content: "";
   position: absolute;
@@ -1176,6 +1181,11 @@ p {
   margin-left: 4px;
   font-weight: 600;
   color: black;
+}
+
+#delete-btn {
+  cursor: pointer;
+  margin-left: auto;
 }
 
 @media (max-width: 976px) {

@@ -29,8 +29,17 @@ harmburgerMenu.addEventListener("click", (e) => {
 	overlay.classList.add("visible");
 });
 
-mobileCloseBtn.addEventListener("click", (e) => {
-	e.preventDefault();
+function hideMobileNav() {
 	mobileNavSidebar.classList.remove("visible");
 	overlay.classList.remove("visible");
+}
+
+mobileCloseBtn.addEventListener("click", (e) => {
+	e.preventDefault();
+	hideMobileNav();
+});
+
+overlay.addEventListener("click", (e) => {
+	e.preventDefault();
+	hideMobileNav();
 });

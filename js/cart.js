@@ -35,7 +35,7 @@ addToCartBtn.addEventListener("click", (e) => {
 
 		// Cart content - Top Level div
 		const parentDiv = document.createElement("div");
-		parentDiv.className = "flex items-center justify-between w-full";
+		parentDiv.className = "flex items-center w-full";
 
 		// Image thumbnail
 		const img = document.createElement("img");
@@ -70,7 +70,6 @@ addToCartBtn.addEventListener("click", (e) => {
 		deleteImg.src = `${baseURL}/images/icon-delete.svg`;
 		deleteImg.alt = "Delete Icon";
 		deleteImg.id = "delete-btn";
-		deleteImg.className = "cursor-pointer";
 		parentDiv.appendChild(deleteImg);
 
 		// Append parentDiv
@@ -86,12 +85,33 @@ addToCartBtn.addEventListener("click", (e) => {
 		if (!click) {
 			const button = document.createElement("button");
 			button.textContent = "Checkout";
+			button.id = "checkout-btn";
 			button.className =
 				"bg-orange rounded-[0.625rem] px-[0.9375rem] py-[1.25rem] text-white w-full";
 			cartItem.className =
 				"flex flex-col flex-grow items-center justify-between px-[1.5rem] pb-[2rem] pt-[1.5rem]";
 			cartItem.appendChild(button);
 		}
+
+		click = true;
+
+		deleteImg.addEventListener("click", () => {
+			parentDiv.remove();
+
+			firstParagraph.className = "block";
+			cartItem.className =
+				"flex flex-col flex-grow items-center justify-center px-[1.5rem] pb-[2rem] pt-[1.5rem]";
+
+			span.remove();
+
+			const checkoutButton = document.getElementById("checkout-btn");
+			if (checkoutButton) {
+				checkoutButton.remove();
+			}
+
+			quantity.textContent = 0;
+		});
+
+		click = false;
 	}
-	click = true;
 });
