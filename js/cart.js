@@ -7,6 +7,11 @@ const cartItem = cartDropdown.querySelector("#cart-item");
 const h1 = document.querySelector("h1");
 const shoppingCart = document.getElementById("shopping-cart");
 
+// Check if the site is running locally or on GitHub Pages
+const isLocal =
+	window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+const baseURL = isLocal ? "" : "/Ecommerce-Product-Page";
+
 increaseBtn.addEventListener("click", (e) => {
 	e.preventDefault();
 	quantity.textContent = parseInt(quantity.textContent) + 1;
@@ -34,14 +39,13 @@ addToCartBtn.addEventListener("click", (e) => {
 
 		// Image thumbnail
 		const img = document.createElement("img");
-		img.src = "../images/image-product-1-thumbnail.jpg";
+		img.src = `${baseURL}/images/image-product-1-thumbnail.jpg`;
 		img.alt = "Cart image thumbnail";
 		img.classList.add("cart-img");
 		parentDiv.appendChild(img);
 
 		// Items
 		const childDiv = document.createElement("div");
-		childDiv.className = "ml-4 flex-grow";
 
 		// Item name
 		const firstParagraphElement = document.createElement("p");
@@ -63,7 +67,7 @@ addToCartBtn.addEventListener("click", (e) => {
 
 		// Delete icon
 		const deleteImg = document.createElement("img");
-		deleteImg.src = "../images/icon-delete.svg";
+		deleteImg.src = `${baseURL}/images/icon-delete.svg`;
 		deleteImg.alt = "Delete Icon";
 		deleteImg.id = "delete-btn";
 		deleteImg.className = "cursor-pointer";
