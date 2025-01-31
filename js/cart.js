@@ -34,7 +34,7 @@ addToCartBtn.addEventListener("click", (e) => {
 
 		// Image thumbnail
 		const img = document.createElement("img");
-		img.src = "/images/image-product-1-thumbnail.jpg";
+		img.src = "../images/image-product-1-thumbnail.jpg";
 		img.alt = "Cart image thumbnail";
 		img.classList.add("cart-img");
 		parentDiv.appendChild(img);
@@ -63,7 +63,7 @@ addToCartBtn.addEventListener("click", (e) => {
 
 		// Delete icon
 		const deleteImg = document.createElement("img");
-		deleteImg.src = "/images/icon-delete.svg";
+		deleteImg.src = "../images/icon-delete.svg";
 		deleteImg.alt = "Delete Icon";
 		deleteImg.id = "delete-btn";
 		deleteImg.className = "cursor-pointer";
