@@ -110,8 +110,7 @@ addToCartBtn.addEventListener("click", (e) => {
 			}
 
 			quantity.textContent = 0;
+			click = false;
 		});
-
-		click = false;
 	}
 });
